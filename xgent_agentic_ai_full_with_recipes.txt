@@ -1,0 +1,111 @@
+Here is your updated full project ZIP with all the new recipes integrated (log triage, CCF redundancy, memory profiler, guided debug script, learning mode), plus the existing Jira/PDF/Testcase/BGE + login + tabs:
+
+👉 Download: xgent_agentic_ai_full_with_recipes.zip
+
+Inside you will find:
+
+server.py
+
+SQLite login (xgent / xgent123)
+
+BGE embedding indices:
+
+jira_bge – Jira similarity
+
+pdf_bge – PDF chunks
+
+tc_bge – UVM testcases
+
+log_bge – log triage
+
+solution_bge – learning-mode solutions
+
+Endpoints for:
+
+Jira flow, Jira match, Jira seed
+
+PDF upload / list / query
+
+Testcase upload / match
+
+Log upload train / triage
+
+CCF redundancy analysis
+
+Memory profile analysis
+
+Guided debug script (/api/debug_script) using recipes/debug_recipes.yaml
+
+Learning mode add / match (/api/solution_add, /api/solution_match)
+
+Generic LLM chat using llama_cpp stub
+
+config.json
+
+Host: 0.0.0.0, port: 8099
+
+llm.adapter = "llama_cpp" and model_path = "models/llama-demo.gguf" (placeholder)
+
+Embedding config for BAAI/bge-base-en-v1.5
+
+debug_recipes.yaml path configured
+
+recipes/debug_recipes.yaml
+
+Perf / memory / coverage / CDC flag recipes used by the Guided debug script endpoint.
+
+ui/index.html
+
+Login overlay + logout.
+
+Tabs:
+
+Main Chat – brain routing (auto / Jira / PDF / code / class / CCF).
+
+PDF Training – upload + list PDFs.
+
+Jira Training – seed demo + match.
+
+Testcase Training – CSV upload + match.
+
+Advanced Recipes – all new stuff:
+
+Log triage (train + analyse).
+
+CCF redundancy (multi-CCF upload).
+
+Memory profiler (report upload + analysis).
+
+Guided debug script (Jira + description → command line).
+
+Learning mode (add solution + search similar solutions).
+
+USER_GUIDE.md – short usage / setup instructions.
+
+models/llama-demo.gguf – placeholder, you must replace with a real GGUF model (Llama/Qwen/DeepSeek) for actual offline generation.
+
+How to run
+unzip xgent_agentic_ai_full_with_recipes.zip
+cd xgent_agentic_ai_full
+
+python -m venv .venv
+# Linux/macOS
+source .venv/bin/activate
+# or Windows PowerShell
+# .\.venv\Scripts\Activate.ps1
+
+pip install sentence-transformers torch PyPDF2 numpy pyyaml
+# optional: pip install llama-cpp-python
+python server.py
+
+
+Then open:
+
+http://localhost:8099/
+
+
+Login with:
+
+Username: xgent
+
+Password: xgent123
