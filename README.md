@@ -1,5 +1,5 @@
 Here is the full project ZIP (code + UI + indices + placeholder GGUF layout) that you can directly download and run:
-
+git clone https://huggingface.co/BAAI/bge-base-en-v1.5
 👉 Download: xgent_agentic_ai_full_with_placeholder_gguf.zip
 
 ⚠️ Important:
